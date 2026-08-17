@@ -7,4 +7,8 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: SPRING_PROFILES_ACTIVE
-        value: h2
+        value: postgres
+      - key: DATABASE_URL
+        value: jdbc:postgresql://dpg-da1pc1ijnfac739v4t10-a:5432/xujunhan
+      - key: PGUSER
+        value: xujunhan_user
