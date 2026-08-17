@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: birthday-wish-api
+  profiles:
+    active: h2
+  jackson:
+    time-zone: Asia/Shanghai
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
+  error:
+    include-message: never
+
+app:
+  cors:
+    allowed-origins: http://localhost:5173,http://127.0.0.1:5173
