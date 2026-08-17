@@ -98,7 +98,8 @@ function stopMusic() {
   }
 }
 
-function unlockOnFirstGesture() {
+function unlockOnFirstGesture(event: PointerEvent) {
+  if ((event.target as HTMLElement).closest(".music-button")) return;
   if (!playing.value) return;
   audioContext?.resume().catch(() => {});
   startMusic();
@@ -111,6 +112,11 @@ function playAfterCountdown() {
 }
 
 async function toggle() {
+  if (playing.value && !musicStarted) {
+    startMusic();
+    return;
+  }
+
   playing.value = !playing.value;
   if (playing.value) {
     startMusic();
