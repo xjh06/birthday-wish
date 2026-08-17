@@ -6,10 +6,4 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: SPRING_PROFILES_ACTIVE
-        value: mysql
-      - key: MYSQL_URL
-        value: jdbc:mysql://YOUR_MYSQL_HOST:3306/birthday_wish?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
-      - key: MYSQL_USERNAME
-        value: YOUR_MYSQL_USERNAME
-      - key: MYSQL_PASSWORD
-        value: YOUR_MYSQL_PASSWORD
+        value: h2
