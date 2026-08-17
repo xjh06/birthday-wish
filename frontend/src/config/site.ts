@@ -3,7 +3,7 @@ import type { BirthdayInfo, BirthdayMessage } from "../types";
 // ✏️ 前端可替换配置：即使不启动后端，也能用这份数据先预览。
 export const FALLBACK_BIRTHDAY_INFO: BirthdayInfo = {
   recipientName: "廖思覃",
-  birthdayDate: "8月18日",
+  birthdayDate: "8月17日",
   heroTitle: "廖思覃，生日快乐",
   blessingTitle: "给新一岁的你",
   blessingText: "愿你的每一天，都有微小的惊喜在等着你。",
