@@ -29,6 +29,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleUnknown(Exception exception) {
-        return ResponseEntity.internalServerError().body(ApiResponse.error(500, "服务器暂时开小差了"));
+        return ResponseEntity.internalServerError()
+            .body(ApiResponse.error(500, exception.getClass().getSimpleName() + ": " + exception.getMessage()));
     }
 }
