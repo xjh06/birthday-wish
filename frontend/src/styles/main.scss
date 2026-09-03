@@ -1,18 +1,21 @@
 :root {
   color-scheme: dark;
-  --bg: #080d1b;
-  --bg-soft: #10182a;
-  --ink: #fff8ee;
-  --muted: rgba(255, 248, 238, 0.68);
-  --gold: #e9c36b;
-  --coral: #f18378;
-  --pink: #f3a0b8;
-  --cream: #fff4d7;
-  --purple: #bda9e8;
-  --teal: #7fd3c7;
-  --line: rgba(255, 255, 255, 0.12);
-  --font-display: "Georgia", "Noto Serif SC", "Songti SC", serif;
-  --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* 深空宇宙主题 —— 星辰舰桥 / 珊瑚行星海 */
+  --bg: #070f24;
+  --bg-soft: #0d1a36;
+  --ink: #eef2ff;
+  --muted: rgba(213, 224, 255, 0.66);
+  --gold: #b9c8ff; /* 星光冰蓝，替代原金色用作点缀 */
+  --coral: #f2a0b0; /* 星球珊瑚粉 */
+  --pink: #f6b4c4;
+  --cream: #eef2ff;
+  --purple: #8f7bd8;
+  --teal: #6fd0c9;
+  --green: #46e07d; /* make a wish 绿 */
+  --line: rgba(255, 255, 255, 0.14);
+  --font-display: "Anton", "Noto Sans SC", "Noto Serif SC", "Microsoft YaHei", sans-serif;
+  --font-script: "Caveat", "Noto Sans SC", cursive;
+  --font-body: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 * {
@@ -58,8 +61,8 @@ textarea:focus-visible {
 }
 
 ::selection {
-  color: #130b0f;
-  background: var(--gold);
+  color: #06101f;
+  background: var(--teal);
 }
 
 .site-shell {
@@ -74,9 +77,11 @@ textarea:focus-visible {
   z-index: -2;
   pointer-events: none;
   background:
-    linear-gradient(145deg, rgba(9, 15, 31, 0.98), rgba(29, 12, 27, 0.96) 48%, rgba(12, 19, 28, 0.98)),
-    radial-gradient(circle at 12% 18%, rgba(233, 195, 107, 0.18), transparent 30%),
-    radial-gradient(circle at 85% 12%, rgba(243, 160, 184, 0.16), transparent 34%);
+    radial-gradient(120% 90% at 85% 6%, rgba(214, 118, 130, 0.34), transparent 42%),
+    radial-gradient(80% 70% at 8% 92%, rgba(111, 208, 201, 0.16), transparent 46%),
+    radial-gradient(70% 60% at 94% 88%, rgba(143, 123, 216, 0.18), transparent 50%),
+    radial-gradient(60% 50% at 12% 12%, rgba(185, 200, 255, 0.12), transparent 44%),
+    linear-gradient(160deg, #081027 0%, #0c1a3a 40%, #070f24 72%, #0a1428 100%);
 }
 
 .section {
@@ -93,7 +98,7 @@ textarea:focus-visible {
 
 .eyebrow {
   margin: 0 0 14px;
-  color: var(--gold);
+  color: var(--teal);
   font-size: 12px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -134,7 +139,7 @@ textarea:focus-visible {
 }
 
 .icon-button:hover {
-  border-color: rgba(233, 195, 107, 0.72);
+  border-color: rgba(185, 200, 255, 0.72);
   background: rgba(20, 30, 50, 0.72);
 }
 

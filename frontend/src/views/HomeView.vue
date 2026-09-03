@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import LoadingOverlay from "../components/LoadingOverlay.vue";
+import TopNav from "../components/TopNav.vue";
 import StarField from "../components/StarField.vue";
 import Balloons from "../components/Balloons.vue";
 import MusicButton from "../components/MusicButton.vue";
@@ -30,6 +31,7 @@ onMounted(() => {
     <StarField />
     <Balloons />
     <MusicButton />
+    <TopNav />
     <LoadingOverlay @done="finishLoading" />
 
     <template v-if="ready">

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const balloons = [
-  { left: "8%", color: "#f18378", delay: "0s", duration: "11s", drift: "24px" },
-  { left: "20%", color: "#e9c36b", delay: "-3s", duration: "13s", drift: "-18px" },
-  { left: "33%", color: "#bda9e8", delay: "-7s", duration: "12s", drift: "30px" },
-  { left: "48%", color: "#f3a0b8", delay: "-2s", duration: "14s", drift: "-28px" },
-  { left: "62%", color: "#7fd3c7", delay: "-8s", duration: "11.5s", drift: "20px" },
-  { left: "76%", color: "#e9c36b", delay: "-4s", duration: "13.5s", drift: "-20px" },
-  { left: "88%", color: "#bda9e8", delay: "-6s", duration: "12.5s", drift: "26px" },
+  { left: "8%", color: "#6fd0c9", delay: "0s", duration: "11s", drift: "24px" },
+  { left: "20%", color: "#f6b4c4", delay: "-3s", duration: "13s", drift: "-18px" },
+  { left: "33%", color: "#8f7bd8", delay: "-7s", duration: "12s", drift: "30px" },
+  { left: "48%", color: "#f0a188", delay: "-2s", duration: "14s", drift: "-28px" },
+  { left: "62%", color: "#b9c8ff", delay: "-8s", duration: "11.5s", drift: "20px" },
+  { left: "76%", color: "#6fd0c9", delay: "-4s", duration: "13.5s", drift: "-20px" },
+  { left: "88%", color: "#8f7bd8", delay: "-6s", duration: "12.5s", drift: "26px" },
 ];
 </script>
 

@@ -99,7 +99,7 @@ function stopMusic() {
 }
 
 function unlockOnFirstGesture(event: PointerEvent) {
-  if ((event.target as HTMLElement).closest(".music-button")) return;
+  if ((event.target as HTMLElement).closest(".music-pill")) return;
   if (!playing.value) return;
   audioContext?.resume().catch(() => {});
   startMusic();
@@ -139,20 +139,80 @@ onBeforeUnmount(() => {
 
 <template>
   <button
-    class="icon-button music-button"
+    class="music-pill"
     type="button"
     :aria-label="playing ? '暂停音乐' : '播放音乐'"
     @click="toggle"
   >
-    <span v-if="!playing" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 18V5l12-2v13"></path>
-        <circle cx="6" cy="18" r="3"></circle>
-        <circle cx="18" cy="16" r="3"></circle>
+    <span class="music-face" :class="{ 'is-playing': playing }" aria-hidden="true">
+      <span v-if="playing" class="rhythm">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <svg v-else viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"></path>
       </svg>
     </span>
-    <span v-else class="rhythm" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </span>
+    <span class="music-label">地球持续旋转中...</span>
   </button>
 </template>
+
+<style scoped>
+.music-pill {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 7px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  background: rgba(10, 18, 38, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.music-pill:hover {
+  border-color: rgba(70, 224, 125, 0.6);
+}
+
+.music-pill:active {
+  transform: scale(0.97);
+}
+
+.music-face {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #06101f;
+  background: var(--green);
+  box-shadow: 0 6px 18px rgba(70, 224, 125, 0.4);
+}
+
+.music-face svg {
+  width: 18px;
+  height: 18px;
+}
+
+.music-label {
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .music-pill {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .music-label {
+    font-size: 12px;
+  }
+}
+</style>

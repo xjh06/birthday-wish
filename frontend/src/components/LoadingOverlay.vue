@@ -50,7 +50,7 @@ onMounted(() => {
   justify-items: center;
   gap: 14px;
   color: var(--cream);
-  background: #080d1b;
+  background: #070f24;
 }
 
 .orbit {

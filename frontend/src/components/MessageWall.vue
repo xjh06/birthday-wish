@@ -40,7 +40,7 @@ function like(message: any) {
 </script>
 
 <template>
-  <section class="message-section section">
+  <section id="blessings" class="message-section section">
     <div class="section-inner message-inner">
       <p class="eyebrow">Leave a note</p>
       <h2>朋友留言墙</h2>

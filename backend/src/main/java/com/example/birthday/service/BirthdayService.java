@@ -14,6 +14,7 @@ import com.example.birthday.repository.BirthdayInfoRepository;
 import com.example.birthday.repository.BirthdayMessageRepository;
 import com.example.birthday.repository.MessageLikeRepository;
 import com.example.birthday.repository.VisitStatRepository;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -86,7 +87,13 @@ public class BirthdayService {
             throw new BusinessException(409, 409, "你已经点过赞啦");
         }
 
-        messageLikeRepository.save(new MessageLike(messageId, visitorId));
+        try {
+            messageLikeRepository.save(new MessageLike(messageId, visitorId));
+        } catch (DataIntegrityViolationException e) {
+            // 并发点赞时，数据库唯一约束（message_id + visitor_id）会拒绝第二条记录，
+            // 统一转换为 409，避免向客户端返回 500。
+            throw new BusinessException(409, 409, "你已经点过赞啦");
+        }
         message.setLikeCount(message.getLikeCount() + 1);
         return BirthdayMessageResponse.from(messageRepository.save(message));
     }

@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section ref="root" class="blessing-section section">
+  <section id="story" ref="root" class="blessing-section section">
     <div class="section-inner blessing-inner">
       <p class="eyebrow">A few words</p>
       <h2>{{ store.info.blessingTitle }}</h2>
